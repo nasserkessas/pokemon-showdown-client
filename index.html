@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head><title>Showdown Gateway</title></head>
-<body style="margin:0;overflow:hidden;">
-    <iframe src="/testclient.html" style="width:100vw;height:100vh;border:none;"></iframe>
+<head>
+    <title>Showdown Personal Gateway</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://play.pokemonshowdown.com/style/client.css" />
+    <script src="https://play.pokemonshowdown.com/js/lib/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="main"></div>
+    <div id="footer"></div>
+
+    <script>
+        // THE MAGIC BEYOND THE BLOCK:
+        // We tell the client to talk to YOUR Netlify URL for data
+        window.Config = {
+            server: {
+                host: window.location.hostname,
+                port: 443,
+                id: 'showdown',
+                protocol: 'https',
+                path: '/showdown-proxy/'
+            }
+        };
+    </script>
+    <script src="https://play.pokemonshowdown.com/js/client.js"></script>
 </body>
 </html>
