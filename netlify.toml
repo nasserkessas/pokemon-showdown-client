@@ -3,13 +3,14 @@
   publish = "."
 
 [[redirects]]
+  # This is the vital "tunnel" that lets the game talk to the servers
   from = "/showdown-proxy/*"
   to = "https://sim3.psim.us/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  # This is the fix: point the root of your site to the actual client file
+  # This ensures that even if you refresh a subpage, it stays on our client
   from = "/*"
-  to = "/testclient.html"
+  to = "/index.html"
   status = 200
