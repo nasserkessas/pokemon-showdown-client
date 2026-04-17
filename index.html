@@ -12,7 +12,8 @@
     <div id="main"></div>
     <div id="footer"></div>
 
-    <script>
+<script>
+        // Set the config
         window.Config = {
             server: {
                 host: window.location.hostname,
@@ -22,7 +23,24 @@
                 path: '/showdown-proxy/'
             }
         };
+
+        // This prevents the app from crashing if it tries to load 'panels' too early
+        window.app = {
+            receive: function(data) { console.log("Data received:", data); }
+        };
     </script>
+    
     <script src="/assets/client.js"></script>
+
+    <script>
+        // This is the manual "Kickstart" for the UI
+        $(function() {
+            if (window.App) {
+                window.app = new App();
+            } else {
+                console.error("App class not found in client.js");
+            }
+        });
+    </script>
 </body>
 </html>
