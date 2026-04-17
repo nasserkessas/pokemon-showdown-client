@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Showdown Personal Gateway</title>
+    <title>Showdown Stealth Gateway</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://play.pokemonshowdown.com/style/client.css" />
-    <script src="https://play.pokemonshowdown.com/js/lib/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="/assets/client.css" />
+    <script src="/assets/jquery.js"></script>
 </head>
 <body>
     <div id="header"></div>
@@ -12,8 +12,6 @@
     <div id="footer"></div>
 
     <script>
-        // THE MAGIC BEYOND THE BLOCK:
-        // We tell the client to talk to YOUR Netlify URL for data
         window.Config = {
             server: {
                 host: window.location.hostname,
@@ -24,6 +22,6 @@
             }
         };
     </script>
-    <script src="https://play.pokemonshowdown.com/js/client.js"></script>
+    <script src="/assets/client.js"></script>
 </body>
 </html>
