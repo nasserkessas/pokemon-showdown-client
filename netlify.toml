@@ -1,5 +1,5 @@
 [build]
-  command = "mkdir -p assets && curl https://play.pokemonshowdown.com/style/client.css -o assets/client.css && curl https://play.pokemonshowdown.com/js/lib/jquery-2.1.4.min.js -o assets/jquery.js && curl https://play.pokemonshowdown.com/js/client.js -o assets/client.js"
+  command = "mkdir -p assets && curl https://play.pokemonshowdown.com/style/client.css -o assets/client.css && curl https://play.pokemonshowdown.com/js/client.js -o assets/client.js"
   publish = "."
 
 [[redirects]]
