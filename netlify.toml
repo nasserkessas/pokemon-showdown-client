@@ -1,16 +1,10 @@
 [build]
-  command = "npm install && ./build"
+  # This command forces the build and ensures files are in the right spot
+  command = "npm install && node build-tools/build-client.js && cp testclient.html index.html"
   publish = "."
 
 [[redirects]]
-  # This is the vital "tunnel" that lets the game talk to the servers
   from = "/showdown-proxy/*"
   to = "https://sim3.psim.us/:splat"
   status = 200
   force = true
-
-[[redirects]]
-  # This ensures that even if you refresh a subpage, it stays on our client
-  from = "/*"
-  to = "/index.html"
-  status = 200
