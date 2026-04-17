@@ -1,6 +1,6 @@
 [build]
-  # We skip the failing script and just use the existing files
-  command = "cp testclient.html index.html"
+  # We don't run any scripts, just make sure there's something to publish
+  command = "echo 'Building...' "
   publish = "."
 
 [[redirects]]
@@ -8,8 +8,3 @@
   to = "https://sim3.psim.us/:splat"
   status = 200
   force = true
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
