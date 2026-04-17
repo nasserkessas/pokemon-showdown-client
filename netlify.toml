@@ -1,16 +1,18 @@
 [build]
-  # We use 'npm install' then the './build' script provided in the repo
+  # We force a specific Node version and run the official build script
   command = "npm install && ./build"
-  # Try changing this to '.' if 'build' or 'dist' fails
-  publish = "build"
+  # Publish the root directory since that's where testclient.html and the JS live
+  publish = "."
 
 [[redirects]]
+  # This acts as our "stealth tunnel" for the game data
   from = "/showdown-proxy/*"
   to = "https://sim3.psim.us/:splat"
   status = 200
   force = true
 
 [[redirects]]
+  # This makes your custom URL load the client by default
   from = "/*"
-  to = "/index.html"
+  to = "/testclient.html"
   status = 200
