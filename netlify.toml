@@ -1,0 +1,16 @@
+[build]
+  # We use 'npm install' then the './build' script provided in the repo
+  command = "npm install && ./build"
+  # Try changing this to '.' if 'build' or 'dist' fails
+  publish = "build"
+
+[[redirects]]
+  from = "/showdown-proxy/*"
+  to = "https://sim3.psim.us/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
